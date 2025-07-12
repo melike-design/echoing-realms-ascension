@@ -1,4 +1,3 @@
-
 import Phaser from 'phaser';
 
 interface GameData {
@@ -170,7 +169,7 @@ export class GameScene extends Phaser.Scene {
       .generateTexture(key, width, height);
   }
 
-  private collectStar(player: Phaser.GameObjects.GameObject, star: Phaser.GameObjects.GameObject) {
+  private collectStar(player: Phaser.Types.Physics.Arcade.GameObjectWithBody, star: Phaser.Types.Physics.Arcade.GameObjectWithBody) {
     const starSprite = star as Phaser.Physics.Arcade.Sprite;
     starSprite.disableBody(true, true);
 
@@ -186,7 +185,7 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  private hitEnemy(player: Phaser.GameObjects.GameObject, enemy: Phaser.GameObjects.GameObject) {
+  private hitEnemy(player: Phaser.Types.Physics.Arcade.GameObjectWithBody, enemy: Phaser.Types.Physics.Arcade.GameObjectWithBody) {
     const enemySprite = enemy as Phaser.Physics.Arcade.Sprite;
     enemySprite.disableBody(true, true);
     
